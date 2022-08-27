@@ -1,8 +1,12 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
-export default function Card() {
+export default function Card(props) {
+  const {movie} = props;
   return (
-    // Use to display each one of the movies
-    <div>Card</div>
+    <div>
+      <Link to={`/movie/${movie._id}`}>{movie.title}</Link>
+      <img src={movie.image} alt={movie.title} />
+    </div>
   )
 }
